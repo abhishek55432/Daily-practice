@@ -1,0 +1,11 @@
+Day 1 - Started my GitHub journey 🚀
+Learning daily and improving step by step.
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "Hello, GitHub!" << endl;
+     cout << "i'm am Abhishek Kumar From CSE 2nd Year"
+    return 0;
+}
