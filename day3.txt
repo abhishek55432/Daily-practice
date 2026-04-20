@@ -1,0 +1,25 @@
+def calculate_grade(score):
+    """Returns a letter grade based on a numerical score."""
+    if score >= 90:
+        return "A"
+    elif score >= 80:
+        return "B"
+    elif score >= 70:
+        return "C"
+    else:
+        return "D"
+
+# A list of student results (Dictionary format)
+students = [
+    {"name": "Alice", "score": 92},
+    {"name": "Bob", "score": 78},
+    {"name": "Charlie", "score": 85}
+]
+
+print("--- Student Grade Report ---")
+
+for person in students:
+    grade = calculate_grade(person["score"])
+    print(f"Student: {person['name']} | Score: {person['score']} | Grade: {grade}")
+
+print("----------------------------")
