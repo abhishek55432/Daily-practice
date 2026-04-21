@@ -1,0 +1,7 @@
+oday I focused on strengthening my basics and actually understanding what I’m doing instead of just copying code. Spent time practicing commits, exploring repositories, and learning how real projects are structured.
+
+💡 Key learnings:
+
+Better understanding of commits & version control
+Explored open-source projects for inspiration
+Improved code readability and organization
