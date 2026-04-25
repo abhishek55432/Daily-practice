@@ -1,0 +1,72 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+struct Student {
+    int id;
+    char name[50];
+};
+
+void addStudent() {
+    Student s;
+    ofstream file("students.txt", ios::app);
+
+    cout << "Enter ID: ";
+    cin >> s.id;
+    cout << "Enter Name: ";
+    cin >> s.name;
+
+    file << s.id << " " << s.name << endl;
+    file.close();
+
+    cout << "Student added successfully!\n";
+}
+
+void displayStudents() {
+    Student s;
+    ifstream file("students.txt");
+
+    cout << "\nStudent Records:\n";
+    while (file >> s.id >> s.name) {
+        cout << "ID: " << s.id << ", Name: " << s.name << endl;
+    }
+    file.close();
+}
+
+void searchStudent() {
+    Student s;
+    int id, found = 0;
+    ifstream file("students.txt");
+
+    cout << "Enter ID to search: ";
+    cin >> id;
+
+    while (file >> s.id >> s.name) {
+        if (s.id == id) {
+            cout << "Found: " << s.id << " " << s.name << endl;
+            found = 1;
+            break;
+        }
+    }
+
+    if (!found) cout << "Student not found!\n";
+    file.close();
+}
+
+int main() {
+    int choice;
+
+    do {
+        cout << "\n1. Add Student\n2. Display Students\n3. Search Student\n4. Exit\n";
+        cout << "Enter choice: ";
+        cin >> choice;
+
+        switch(choice) {
+            case 1: addStudent(); break;
+            case 2: displayStudents(); break;
+            case 3: searchStudent(); break;
+        }
+    } while(choice != 4);
+
+    return 0;
+}
